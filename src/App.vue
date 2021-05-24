@@ -2,7 +2,7 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name">
   <button @click="handleClick">click me</button>
-  <Modal />
+  <Modal :header="header" :text="text" :theme="theme" />
 </template>
 
 <script>
@@ -13,7 +13,10 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'My first Vue App ;-)'
+      title: 'My first Vue App ;-)',
+      header: 'Test header for passing props',
+      text: 'Here for testing text',
+      theme: 'sale'
     }
   },
   methods: {
