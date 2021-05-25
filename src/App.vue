@@ -14,7 +14,16 @@
       <p>This is a book!</p>
     </Modal>
   </div>
-  <button @click="toggleModal">show modal</button>
+
+  <div v-if="showModalTwo">
+    <Modal @close="toggleModalTwo">
+      <h1>CHALLENGE</h1>
+      <p>for challenge</p>
+    </Modal>
+  </div>
+
+  <button @click="toggleModal">open modal</button>
+  <button @click="toggleModalTwo">show modal</button>
 </template>
 
 <script>
@@ -30,6 +39,7 @@ export default {
       text: 'Here for testing text',
       theme: 'sale',
       showModal: false,
+      showModalTwo: false,
     }
   },
   methods: {
@@ -40,6 +50,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo
     }
   }
 }
